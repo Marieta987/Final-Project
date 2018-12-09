@@ -1,3 +1,4 @@
+//Marieta's part
 var socket = io();
 let players = {
     me: {
@@ -13,10 +14,7 @@ let players = {
 const part1 = document.getElementById('part1');
 const part2 = document.getElementById('userSelection');
 const placeHolder = document.getElementById('message');
-
-
 var userOption = undefined;
-
 
 function playWith(option) {
     // first, we deselect the previous selected element (if exist)
@@ -49,7 +47,7 @@ socket.on('newGame', function(data) {
     console.log('mewgame', data);
     players.me = data;
 });
-
+//Mariam's part
 document.getElementById('join').addEventListener('click', function(e) {
     if (document.getElementById('nameJoin').value && document.getElementById('room').value) {
         players.me.name = document.getElementById('nameJoin').value;

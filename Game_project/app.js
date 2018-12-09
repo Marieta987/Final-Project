@@ -1,3 +1,4 @@
+//Mariam's part
 const express = require('express');
 const path = require('path');
 
@@ -37,7 +38,7 @@ io.on('connection', function (socket) {
             socket.emit('err', {message: 'Sorry, The room is full!'});
         }
     });
-
+//Marieta's part
     socket.on('result', function (data) {
         console.log(data);
         console.log('rooms', io.nsps['/'].adapter.rooms);

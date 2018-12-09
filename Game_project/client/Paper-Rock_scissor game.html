@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Game</title>
+</head>
+
+<body>
+<div id="game">
+
+    <div id="userSelection">
+        <h1>Select your choice</h1>
+        <ul>
+            <li class="selection" id="rock">
+                <img src="img/rock.png" alt="rock" onclick="playWith('rock')"/>
+            </li>
+            <li class="selection" id="paper">
+                <img src="img/paper.png" alt="Paper" onclick="playWith('paper')"/>
+            </li>
+            <li class="selection" id="scissors">
+                <img src="img/scissors.png" alt="Scisor" onclick="playWith('scissors')"/>
+            </li>
+        </ul>
+        <button onclick="playGame()">Play</button>
+    </div>
+    <div id="result"></div>
+</div>
+
+<canvas id="canvas" height="500" width="500"> </canvas>
+
+<script>
+
+
+    function playGame(){
+        var computerOption = Math.random();
+        if (computerOption < 0.34){
+            computerOption = "rock";
+        }else if(computerOption <=0.67){
+            computerOption = "paper";
+        }else{
+            computerOption = "scissors";
+        }
+
+        resultMessage = compare(userOption, computerOption);
+
+        document.getElementById("result").innerHTML =
+            "<p>User select: <img src='" + userOption + ".png' > - Computer select: <img src='"
+            + computerOption + ".png' ></p> <p>" + resultMessage + "</p>";
+
+    }
+
+
+
+
+    function compare(userSelection, computerSelection)
+    {
+        if(userSelection === undefined)
+        {
+            return  "Please, select an option before play";
+        }
+
+        if (userSelection === computerSelection)
+        {
+            return( "It is a draw!");
+        }
+
+        if (userSelection === "rock")
+        {
+            if (computerSelection === "scissors")
+            {
+                return( "You win.");
+            } else {
+                return( "The computer win. Try again.");
+            }
+
+        } else if (userSelection === "paper") {
+
+            if (computerSelection === "rock")
+            {
+                return( "You win." );
+            } else if("scissor") {
+                return ("The computer win. Try again." );
+            }
+
+        } else if (userSelection === "scissors") {
+
+            if (computerSelection === "rock")
+            {
+                return( "The computer win. Try again." );
+            }else{
+                return ("You win");
+
+            }
+        }
+    }
+
+    var userOption = undefined;
+
+    function playWith(option){
+        // first, we deselect the previous selected element (if exist)
+        if (userOption !== undefined)
+        {
+            userSelectionElement = document.getElementById(userOption);
+            // we remove the purple border (if exist)
+            userSelectionElement.style.border = "5px #F8F8F8  solid";
+        }
+        // then, we select the user option and we add
+        // a purple border
+        userOption = option;
+        userSelectionElement = document.getElementById(option);
+        userSelectionElement.style.border = "5px #990066 solid";
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<div id="game">
+    <div id="message"></div>
+    <div id="part1">
+        <h4 id="gameCreat">Create a new Game</h4>
+        <input type="text" name="name" id="nameNew" placeholder="Enter game name" required>
+        <button id="new">New Game</button>
+
+        <h4 id="joining">Join an existing game</h4>
+        <input type="text" name="name" id="nameJoin" placeholder="Enter your name" required>
+        <input type="text" name="room" id="room" placeholder="Enter Game ID" required>
+        <button id="join">Join Game</button>
+    </div>
+
+
+    <div id="userSelection">
+        <h1 id="selector">Select your choice</h1>
+
+                <div id="boxOfImages">
+                    <img class="image" id ="rock" src="img/rock.png" alt="rock" onclick="playWith('rock')"/>
+                    <img class="image" id ="paper" src="img/paper.png" alt="Paper" onclick="playWith('paper')"/>
+                    <img class="image" id ="scissors" src="img/scissors.png" alt="Scissors" onclick="playWith('scissors')"/>
+                </div>
+        <button onclick="submit(event)">Submit</button>
+
+    </div>
+    <div id="result"></div>
+</div>
+<canvas id="canvas" height="500" width="500"></canvas>
+
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+body {
+    background-image: url("http://idenko.co.za/wp-content/uploads/2015/06/black-abstract-11-background.jpg");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+.boxOfImages {
+    display: flex;
+    justify-content: space-around;
+}
+.image {
+    width: 250px;
+    height: 250px;
+}
+
+
+li {
+    float: left;
+}
+
+
+li {
+    display: inline-list-item;
+    margin-left: 50%;
+}
+
+* {
+    box-sizing: border-box
+}
+
+img {
+    display: inline;
+}
+
+#selector {
+    color: #ffcc00;
+    font-family: 'Luckiest Guy', cursive;
+}
+
+#gameCreat {
+    font-family: 'Luckiest Guy', cursive;
+    color: #ffcc00;
+}
+
+#joining {
+    color: #ffcc00;
+    font-family: 'Luckiest Guy', cursive;
+}
+
+#message {
+    color: white;
+    font-weight: 600;
+}
